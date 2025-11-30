@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Jackson | Technical Professional Portfolio</title>
+    <style>
+        /* --- COMBINED & CONSOLIDATED STYLES (LIGHT FALL PALETTE) --- */
+
+        /* General Body Styles */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #FAF8F1; /* Soft Cream/Light Base */
+            color: #4F352A; /* Rich Dark Brown for main text */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #A95C3C; /* Burnt Orange/Terracotta (Primary Accent) */
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #F0E68C; /* Goldenrod/Khaki (Warm Highlight) */
+        }
+
+        /* Container for content */
+        main {
+            width: 85%;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Header Styles (For Resume download section) */
+        header {
+                text-align: center;
+                padding: 20px 0;
+                border-bottom: 3px solid #d4a373;
+                margin-bottom: 5px;
+        }
+
+        /* Heading Styles */
+        h1 {
+            color: #A95C3C; /* Burnt Orange/Primary Accent */
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #964B00; /* Darker Brown Border */
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #964B00; /* Dark Brown (Secondary Accent) */
+            font-size: 1.8em;
+        }
+
+        h3 {
+            color: #7d5a3e; /* Standard Medium Brown */
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        /* Image Styling */
+        img.ProfessionalPhoto {
+            width: 300px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Job/Experience Sections (Using Brown/Gold for dividers) */
+    .job,.school,.category,.project-item {
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 3px solid #964B00; /* Dark Brown Line */
+        }
+
+    .title-date {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        /* Lists (Skills and Job Duties) */
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 5px 0 10px 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Contact Info Styles */
+    .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #964B00;
+        }
+    .contact-info p {
+            margin: 3px 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* QR Code Styling */
+     .qr-code {
+            text-align: center;
+            margin: 30px 0;
+        }
+     .qr-code img {
+            width: 150px;
+            border: 5px solid #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- CHATBOT STYLING (FALL COLOR MODIFICATION) --- */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 280px;
+            height: 420px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            background-color: #f0f0f0;
+            z-index: 2000;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 0.9em;
+            overflow: hidden;
+        }
+
+        #chatbot-container h3 {
+            margin: 0;
+            padding: 10px;
+            background-color: #A95C3C; /* Burnt Orange Header */
+            color: #ffffff;
+            text-align: center;
+            font-size: 1.1em;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        #chat-window {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            margin: 0;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Base Message Styling */
+      .message {
+            max-width: 80%;
+            padding: 8px 12px;
+            border-radius: 18px;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+        }
+
+        /* Bot Message (Left, Primary Accent Color) */
+      .bot-message {
+            align-self: flex-start;
+            background-color: #A95C3C; /* Burnt Orange Bubble */
+            color: #ffffff;
+            border-bottom-left-radius: 4px;
+        }
+
+        /* User Message (Right, Light Gray) */
+      .user-message {
+            align-self: flex-end;
+            background-color: #e5e5ea;
+            color: #333;
+            border-bottom-right-radius: 4px;
+        }
+
+        /* Input Field Styling */
+        #chat-input {
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+            color: #7d5a3e;
+            font-size: 0.9em;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+
+        <section id="home">
+            <h1>Welcome to Marcus Jackson's Portfolio</h1>
+
+            <img class="ProfessionalPhoto" src="photo.jpg" alt="Professional photo of Marcus Jackson">
+            <h2>Home</h2>
+
+            <p>Greetings! My name is Marcus Jackson, and I am a results-oriented and highly motivated technical professional seeking an
+            entry-level position where I can apply my hands-on experience in building and troubleshooting personal computers and
+            leveraging the skills acquired from my Bachelor of Science in Computer Technology that I have obtained from Bowie State University.
+                I am eager to learn new technologies and contribute to a team environment.</p>
+
+        </section>
+
+        <section id="about">
+            <h2>👤 About Me </h2>
+             <section id="skills-list">
+                <div class="skills-list">
+                    <p> My technical interests are centered on the vital intersection of
+                        data analytics and cybersecurity. I possess a keen eye for database
+                        integrity and complex data patterning, a skill demonstrated during
+                        my participation in the FICO Analytics Challenge. This intensive
+                        experience involved analyzing extensive datasets to develop robust
+                        methods for credit fraud detection and recognizing the subtle
+                        behavioral patterns shared by both victims and fraudsters.
+                        Furthermore, I am deeply focused on the application of security
+                        principles, including cyber defense and network security. This
+                        commitment is reflected not only in my academic research on Zero
+                        Trust Architecture and Machine Learning  but also in the tangible
+                        results of my practical project, securing Ross's Network, the source
+                        code for which is available on my GitHub.
+                    </p>
+                    <h3>🛠️ Key Skills</h3>
+                    <ul>
+                        <li>Customer Service </li>
+                        <li>Troubleshooting </li>
+                        <li>Communication </li>
+                        <li>Custom PC Building (Closed Case / Open Air) </li>
+                        <li>Operating Systems (Windows / MacOS / Linux) </li>
+                        <li>Network Troubleshooting </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="education-credentials">
+                <h3>🎓 Education & Credentials</h3>
+                <div class="school">
+                    <p>Bowie State University (2025) </p>
+                    <h3>Bachelor of Science in Computer Technology</h3>
+                </div>
+
+                <h3>Cisco Credentials </h3>
+                <ul>
+                    <li>Exploring IoT with Cisco Packet Tracer </li>
+                    <li>Exploring Networking with Cisco Packet Tracer </li>
+                </ul>
+            </section>
+
+            <section id="tech-experience">
+                <h3>💻 Software & Hardware Expertise</h3>
+                <div class="category">
+                    <p>Windows 10 & 11, MacOS, Red Hat Linux 9.x, Ubuntu, Alma, Rocky, iPhoneOS, iPadOS </p>
+                </div>
+                <div class="category">
+                    <h3>Software </h3>
+                    <p>MS Office 365, FTP, TELNET, HTML, Borne Shell, Python, PowerShell, Java, and SQL.</p>
+                </div>
+                <div class="category">
+                    <h3>Hardware </h3>
+                    <p>Intel and AMD compatible PCs, Apple Computers and Devices. Crypto Mining Builds and ASICs.</p>
+                </div>
+            </section>
+        </section>
+
+
+        <section id="projects">
+            <h2>🚀 Projects & Portfolio</h2>
+
+            <div class="project-item">
+                <h3>Zero Trust Architecture & ML Research</h3>
+                <p>A comprehensive research paper exploring how Machine Learning enhances Zero Trust security frameworks for real-time threat detection and adaptive mitigation.</p>
+                <p><strong>Status:</strong> Completed (Academic Paper)</p>
+                <p><a href="" target="_blank">View GitHub Repository (Source Code)</a></p>
+            </div>
+
+             <div class="project-item">
+                <h3>Personal Portfolio Website (This Site)</h3>
+                <p>Designed and built a professional portfolio using HTML and CSS to showcase skills, experience, and projects to potential employers.</p>
+                <p><strong>Status:</strong> Completed</p>
+                <p><a href="" target="_blank">View GitHub Repository (Source Code)</a></p>
+            </div>
+        </section>
+
+
+        <section id="resume">
+            <h2>📄 Professional Experience & Resume</h2>
+
+            <p style="text-align: center; margin-bottom: 25px;">
+                <a href="" target="_blank" style="color: #43766C; font-weight: bold; border: 2px solid #43766C; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+                    Download Full Resume (PDF)
+                </a>
+            </p>
+
+            <div class="job">
+                <h3>Cinemark </h3>
+                <p class="title-date"><strong>Cashier/Customer Service</strong> – Nov 2024 – Present </p>
+                <ul>
+                    <li>Food Preparation </li>
+                    <li>Customer Service </li>
+                    <li>Cashier </li>
+                    <li>Inventory Management </li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Jackson Bakery Curbside Cupcakes </h3>
+                <p class="title-date"><strong>Cashier/Customer Service</strong> – May 2020 – Present </p>
+                <ul>
+                    <li>Inventory Management </li>
+                    <li>Time Management </li>
+                    <li>Customer Service </li>
+                </ul>
+            </div>
+
+            <div class="job education-role">
+                <h3>Summer Camp Mentor (CPU Boys Camp) </h3>
+                <p class="title-date"><strong>Mentor</strong> – June 2023 – June 2023 & 2024, 2025 </p>
+                <ul>
+                    <li>Instructed students on computer components.</li>
+                    <li>Taught classes on building websites.</li>
+                    <li>Taught classes on basic network technology.</li>
+                </ul>
+            </div>
+
+            <div class="job education-role">
+                <h3>Latin American Youth Center </h3>
+                <p class="title-date"><strong>Enrichment Coordinator (Student Mentor)</strong> – June 2023 – July 2023 & 2024, 2025 </p>
+                <ul>
+                    <li>Assisting the instructors </li>
+                    <li>Maintaining daily and weekly attendance records </li>
+                    <li>Reporting disciplinary incidents </li>
+                    <li>Providing support for Capstone presentations </li>
+                    <li>Participating in scheduled staff meetings and activities </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>📧 Contact Me</h2>
+
+            <div class="contact-form-placeholder" style="border: 1px dashed #ccc; padding: 20px; margin-bottom: 30px;">
+                <p style="text-align: center;">[Placeholder for Contact Form]</p>
+                <p>Visitors can submit their inquiries directly using a JavaScript or backend-powered form here.</p>
+                </div>
+
+            <h1 style="text-align: center;">Contact Information</h1>
+            <div class="contact-info">
+                <p>Marcus Jackson</p>
+                <p>Halethrope, Maryland</p>
+                <p>410-299-4083 | Marcusjr1727@outlook.com</p>
+            </div>
+        </section>
+
+        <section class="qr-code">
+            <h3>Scan for Instant Website Access</h3>
+            <img src="qr_code_link_to_github.png" alt="QR Code linking to Marcus Jackson's Portfolio GitHub Repository">
+        </section>
+
+    </main>
+
+    <div id="chatbot-container">
+        <h3 style="margin-top: 0; padding: 5px; background-color: #43766C; color: #ffffff; text-align: center; border-radius: 8px 8px 0 0;">Ask Marcus Bot 🤖</h3>
+        <div id="chat-window" style="height: 280px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            <p style="color: #43766C;">Bot: Hello! I can answer questions about Marcus's skills, experience, or education. Try "start guided Q&A".</p>
+        </div>
+        <input type="text" id="chat-input" placeholder="Type your question..." style="width: 100%; box-sizing: border-box; padding: 8px;">
+        </div>
+
+    <footer>
+        <p>&copy; 2025 Technical Professional Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
