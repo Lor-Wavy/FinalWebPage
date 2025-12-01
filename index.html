@@ -356,8 +356,8 @@ async function sendMessage() {
             loadingElement.remove();
         }
 
-        // Assuming the deployed Python service returns the text in the 'response' key
-        const botResponse = data.response || "No response received from the bot. The API might be running, but returned an empty reply.";
+        // Check for both 'message' (preferred key) or 'response' (fallback key)
+        const botResponse = data.message || data.response || "No response received from the bot. The API might be running, but returned an empty reply.";
         displayMessage(botResponse, 'bot');
 
     } catch (error) {
