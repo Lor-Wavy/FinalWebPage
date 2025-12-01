@@ -19,8 +19,8 @@ Local Setup
 
 Clone the Repository:
 
-git clone [your-repo-url]
-cd [your-repo-name]
+git clone 
+cd 
 
 
 Open in Browser: Simply open the main file in your web browser.
