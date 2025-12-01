@@ -61,7 +61,7 @@ INTENT_MAPPING = {
     'query_summary': r'\b(summary|objective|seeking|tell me about marcus|what job marcus looking for|what is marcus looking for)\b',
     'query_skills': r'\b(skills|expertise|proficient|what skills does marcus have| what expertise does marcus have)\b',
     'query_experience': r'\b(experience|job|role|worked|what experiences does marcus have)\b',
-    'query_education': r'\b(education|degree|school|credentials|university|what is the highest level of education that marcus has|what school did/does marcus attend)\b',
+    'query_education': r'\b(education|degree|school|credentials|university|what is the highest level of education that marcus has|what school did/does marcus attend|when did marcus graduate)\b',
     'query_tech_stack': r'\b(what software does marcus know how to use|what hardware does marcus know how to use|what os/operating systems does marcus know|what languages does marcus know how to use|software|os|hardware|tech stack)\b',
     'query_contact_information': r'\b(what is the best way to reach marcus|what is marcus email| what is marcus phone number|contact information|email|phone|phone number|contact)\b',
     'query_status': r'\b(status|available|next step|hiring)\b',
@@ -191,4 +191,5 @@ if __name__ == '__main__':
     print("Press Ctrl+C to stop the server.")
 
     app.run(debug=True, port=5000)
+
 
