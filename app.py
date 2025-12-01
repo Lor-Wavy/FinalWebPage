@@ -1,14 +1,13 @@
+from flask_cors import CORS  # Required for browser compatibility
 import re
 import random
 import time
 import nltk
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Required for browser compatibility
 from typing import Dict, List, Any
 
 # --- FLASK SETUP ---
 app = Flask(__name__)
-
 CORS(app)
 
 @app.route("/", methods=["GET"])
@@ -192,3 +191,4 @@ if __name__ == '__main__':
     print("Press Ctrl+C to stop the server.")
 
     app.run(debug=True, port=5000)
+
