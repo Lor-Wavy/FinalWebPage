@@ -57,6 +57,34 @@
             font-style: italic;
             color: #555;
         }
+        
+        nav {
+            background-color: #A95C3C;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #F0E68C; }
+        main {
+            width: 85%;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
         /* Section Headings */
         h2 {
@@ -112,6 +140,13 @@
 </head>
 <body>
     <header>
+        <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="Resume.html">Resume</a>
+        <a href="#contact">Contact Me</a>
+    </nav>
         <h1>Marcus Jackson's Resume</h1>
         <p>I am a results-oriented and highly motivated technical professional seeking an entry-level position where I can apply my hands-on experience in building and troubleshooting personal computers and leveraging the skills acquired from my Bachelor of Science in Computer Technology. I am eager to learn new technologies and contribute to a team environment.</p>
     </header>
@@ -226,5 +261,6 @@
 
 </body>
 </html>
+
 
 
