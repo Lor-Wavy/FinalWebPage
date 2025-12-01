@@ -332,7 +332,7 @@ async function sendMessage() {
     try {
         // *** CRITICAL FIX: The payload key MUST be 'query' to match the Flask app's expectation. ***
         const payload = {
-            query: userInput
+            message: userInput
         };
 
         const response = await fetch(API_ENDPOINT, {
@@ -401,5 +401,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
+
 
 
