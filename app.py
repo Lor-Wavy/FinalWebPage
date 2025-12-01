@@ -11,6 +11,11 @@ app = Flask(__name__)
 
 CORS(app)
 
+@app.route("/", methods=["GET"])
+def hello_world():
+    """Simple health check to confirm the service is running and not crashing."""
+    return "Marcus Bot Service is running and public."
+
 # --- 1. RESUME DATA STRUCTURES ---
 
 RESUME_DATA = {
@@ -185,4 +190,5 @@ if __name__ == '__main__':
     # Running on port 5000 as defined in the frontend JS
     print("Marcus Jackson Resume Chatbot Backend running on http://127.0.0.1:5000")
     print("Press Ctrl+C to stop the server.")
+
     app.run(debug=True, port=5000)
