@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Technical Professional</title>
     <style>
+        /* New Fall Palette Variables */
+        :root {
+            --color-body-bg: #FFF8E1; /* Very pale vanilla/cream */
+            --color-text: #5D4037;    /* Deep coffee/chestnut brown */
+            --color-primary-accent: #B3583C; /* Rich Burnt Sienna for Headings */
+            --color-secondary-accent: #CC9966; /* Soft Camel/Ochre for Main Borders */
+            --color-minor-accent: #78422A;   /* Deep Rustic Brown for Subheadings/Bars */
+        }
+        
         /* General Body Styles */
         body {
             font-family: "Times New Roman", Times, serif;
-            background-color: #FFF8E1;
-            color: #5D4037;
+            background-color: var(--color-body-bg);
+            color: var(--color-text);
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -21,35 +30,35 @@
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px 40px;
-            background-color: #ffffff;
+            background-color: #ffffff; /* Keep main content white for strong contrast */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
 
         /* Header Styles */
         header {
-                text-align: center;
-                padding: 20px 0;
-                border-bottom: 3px solid #CC9966;
-                margin-bottom: 5px;
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 3px solid var(--color-secondary-accent); /* Soft Camel Accent */
+            margin-bottom: 5px;
         }
 
         header h1 {
-                color: #B3583C;
-                margin: 0;
-                font-size: 2.5em;
+            color: var(--color-primary-accent); /* Burnt Sienna Accent */
+            margin: 0;
+            font-size: 2.5em;
         }
 
         /* Contact Info Styles */
-       .contact-info {
+        .contact-info {
             text-align: center;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid #78422A;
+            border-bottom: 1px solid var(--color-minor-accent); /* Deep Rustic Brown */
         }
-       .contact-info p {
+        .contact-info p {
             margin: 3px 0;
-            color: #555;
+            color: #555; /* Neutral Dark Gray */
             font-size: 1.1em;
         }
 
@@ -57,59 +66,31 @@
             font-style: italic;
             color: #555;
         }
-        
-        nav {
-            background-color: #B3583C;
-            padding: 15px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0 20px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: color 0.3s;
-        }
-        nav a:hover { color: #F0E68C; }
-        main {
-            width: 85%;
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 30px 40px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
 
         /* Section Headings */
         h2 {
-            border-bottom: 2px solid #78422A;
+            border-bottom: 2px solid var(--color-minor-accent); /* Deep Rustic Brown */
             padding-bottom: 5px;
             margin-top: 30px;
             margin-bottom: 15px;
-            color: #B3583C;
+            color: var(--color-primary-accent); /* Burnt Sienna Accent */
             font-size: 1.8em;
         }
 
         h3 {
-            color: #7d5a3e;
+            color: var(--color-minor-accent); /* Deep Rustic Brown */
             margin-top: 15px;
             margin-bottom: 5px;
         }
 
         /* Job/Experience Sections */
-       .job,.school,.category {
+        .job, .school, .category {
             margin-bottom: 20px;
             padding-left: 10px;
-            border-left: 3px solid #78422A;
+            border-left: 3px solid var(--color-minor-accent); /* Deep Rustic Brown Accent Bar */
         }
 
-       .title-date {
+        .title-date {
             margin-top: 0;
             margin-bottom: 5px;
             font-size: 1.1em;
@@ -131,27 +112,51 @@
             text-align: center;
             padding: 10px 0;
             margin-top: 30px;
-            color: #7d5a3e;
+            color: var(--color-minor-accent); /* Deep Rustic Brown */
             font-size: 0.9em;
         }
-        .qr-code { text-align: center; margin: 30px 0; }
-        .qr-code img { width: 150px; border: 5px solid #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        
+        /* Modern Button Styles for Download Link (New Location at Bottom) */
+        .download-btn-container {
+            text-align: center;
+            margin-top: 40px; /* Added spacing from the last section */
+            padding-top: 20px;
+            border-top: 1px dashed #ccc; /* Subtle visual separation */
+        }
+        .download-btn {
+            display: inline-flex; /* Use flex for vertical centering */
+            align-items: center;
+            gap: 8px; /* Space between icon and text */
+            padding: 12px 30px; /* Larger padding */
+            background-color: var(--color-primary-accent); /* Burnt Sienna */
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700; /* Bolder text */
+            font-size: 1.1em;
+            border-radius: 8px; /* Modern, slightly rounded corners */
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 12px rgba(179, 88, 60, 0.3); /* Accent-colored shadow for modern lift */
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .download-btn:hover {
+            background-color: var(--color-minor-accent); /* Deeper Rustic Brown on hover */
+            box-shadow: 0 8px 16px rgba(179, 88, 60, 0.4); /* Stronger shadow on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <nav>
-        <a href="index.html#home">Home</a>
-        <a href="index.html#about">About Me</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="Resume.html">Resume</a>
-        <a href="index.html#contact">Contact Me</a>
-    </nav>
         <h1>Marcus Jackson's Resume</h1>
-        <p>I am a results-oriented and highly motivated technical professional seeking an entry-level position where I can apply my hands-on experience in building and troubleshooting personal computers and leveraging the skills acquired from my Bachelor of Science in Computer Technology. I am eager to learn new technologies and contribute to a team environment.</p>
+        <p>Results-oriented and highly motivated technical professional seeking an entry-level position where I can apply my hands-on experience in building and troubleshooting personal computers and leveraging the skills acquired from my Bachelor of Science in Computer Technology. I am eager to learn new technologies and contribute to a team environment.</p>
     </header>
 
     <main>
+        <!-- DOWNLOAD BUTTON HAS BEEN MOVED TO THE BOTTOM OF MAIN -->
+
         <section id="skills">
             <h2>🛠️ Key Skills</h2>
             <div class="skills-list">
@@ -244,15 +249,19 @@
         </section>
 
         <h1 style="text-align: center;">Contact Information</h1>
-<div class="contact-info">
-    <p>Marcus Jackson</p>
-    <p>Halethrope, Maryland</p>
-    <p>410-299-4083 | Marcusjr1727@outlook.com or JacksonJrM0710@students.bowiestate.edu</p>
-    </div>
-        <section class="qr-code">
-            <h3>Scan for Instant Github Access</h3>
-            <img src="Github-1024.jpeg"/>
-        </section>
+        <div class="contact-info">
+            <p>Marcus Jackson</p>
+            <p>Halethrope, Maryland</p>
+            <p>410-299-4083 | Marcusjr1727@outlook.com</p>
+        </div>
+
+        <!-- NEW LOCATION FOR DOWNLOAD BUTTON at the bottom -->
+        <div class="download-btn-container">
+            <a href="Marcus_Jackson_Resume.pdf" download="Marcus_Jackson_Resume.pdf" class="download-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M16 16h-6"/><path d="M16 20h-6"/></svg>
+                Download Full PDF Resume
+            </a>
+        </div>
     </main>
 
     <footer>
@@ -261,9 +270,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
