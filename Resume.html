@@ -24,6 +24,33 @@
             padding: 0;
         }
 
+        /* --- Navigation Bar Styles (NEW) --- */
+        nav {
+            background-color: var(--color-minor-accent); /* Deep Rustic Brown background */
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff; /* White text for contrast */
+            text-decoration: none;
+            padding: 8px 15px;
+            margin: 0 10px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: var(--color-primary-accent); /* Burnt Sienna hover effect */
+            color: #FFF8E1; /* Light hover text */
+        }
+        /* --- End Navigation Bar Styles --- */
+
+
         /* Container for content */
         main {
             width: 85%;
@@ -116,7 +143,7 @@
             font-size: 0.9em;
         }
         
-        /* Modern Button Styles for Download Link (New Location at Bottom) */
+        /* Modern Button Styles for Download Link */
         .download-btn-container {
             text-align: center;
             margin-top: 40px; /* Added spacing from the last section */
@@ -149,14 +176,21 @@
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav>
+        <!-- Assuming your primary navigation links are to these pages -->
+        <a href="index.html">Home</a>
+        <a href="Portfolio.html">Portfolio</a>
+        <a href="Resume.html">Resume</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
     <header>
         <h1>Marcus Jackson's Resume</h1>
         <p>Results-oriented and highly motivated technical professional seeking an entry-level position where I can apply my hands-on experience in building and troubleshooting personal computers and leveraging the skills acquired from my Bachelor of Science in Computer Technology. I am eager to learn new technologies and contribute to a team environment.</p>
     </header>
 
     <main>
-        <!-- DOWNLOAD BUTTON HAS BEEN MOVED TO THE BOTTOM OF MAIN -->
-
         <section id="skills">
             <h2>🛠️ Key Skills</h2>
             <div class="skills-list">
@@ -255,12 +289,13 @@
             <p>410-299-4083 | Marcusjr1727@outlook.com</p>
         </div>
 
-        <!-- NEW LOCATION FOR DOWNLOAD BUTTON at the bottom -->
+        <!-- Download Button -->
         <div class="download-btn-container">
             <a href="Marcus_Jackson_Resume.pdf" download="Marcus_Jackson_Resume.pdf" class="download-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M16 16h-6"/><path d="M16 20h-6"/></svg>
                 Download Full PDF Resume
             </a>
+            <p style="font-size: 0.9em; color: #777; margin-top: 10px;">(Recommended format for all professional submissions.)</p>
         </div>
     </main>
 
